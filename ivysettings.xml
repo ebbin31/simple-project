@@ -1,8 +1,8 @@
 <ivysettings>
 <settings defaultResolver="defaultresolver" />
 <property name="ibiblio-maven2-root" value="http://172.31.86.246:8082/artifactory/m2/" />
-<property name="marshalls-snapshots" value="http://172.31.86.246:8082/artifactory/marshalls-ant-snapshots-local/" />
-<property name="marshalls-releases" value="http://172.31.86.246:8082/artifactory/marshalls-ant-releases-local/" />
+<property name="m2snapshots" value="http://172.31.86.246:8082/artifactory/m2-snapshots/" />
+<property name="m2releases" value="http://172.31.86.246:8082/artifactory/m2-releases/" />
 <credentials host="172.31.86.246" realm="Artifactory Realm" username="${jFrogUsername}" passwd="${jFrogPassword}"/>
 <resolvers>
     <chain name="defaultresolver">
