@@ -1,30 +1,11 @@
 <project xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:sonar="antlib:org.sonar.ant" default="jar">
   <property name="ivy.version" value="2.3.0"/>
-  <property name="ivy.url" value="http://172.16.112.5:8082/artifactory/example-repo-local/ivy-2.3.0.jar"/>
+  <property name="ivy.url" value="http://172.31.86.246:8082/artifactory/example-repo-local/ivy-2.3.0.jar"/>
   <property name="ivy.jar.dir" value="${basedir}/ivy"/>
   <property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar"/>
   <property name="build.dir" value="target"/>
   <property name="src.dir" value="src/main/java"/>
 
-<property name="sonar.host.url" value="http://172.16.112.5:9000" />
-        <!-- Define the Sonar properties -->
-	<property name="sonar.projectKey" value="org.sonarqube:devopsdemo" />
-	<property name="sonar.projectName" value="Devopsdemo" />
-	<property name="sonar.projectVersion" value="1.0" />
-	<property name="sonar.sources" value="." />
-	<property name="sonar.binaries" value="${build.dir}" />
-        <property name="sonar.java.binaries" value="${build.dir}/classes/*" />
-	<property name="sonar.sourceEncoding" value="UTF-8" />
-
-<target name="sonar">
-                      <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
-                              <!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
-                              <classpath path="/opt/sonarqube/lib/sonarqube-ant-task-2.7.0.1612.jar" />
-                      </taskdef>
-     
-                      <!-- Execute SonarQube Scanner for Ant Analysis -->
-                      <sonar:sonar />
-        </target>
 
   <target name="download-ivy" unless="skip.download">
     <mkdir dir="${ivy.jar.dir}"/>
