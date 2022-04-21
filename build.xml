@@ -1,6 +1,6 @@
 <project xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:sonar="antlib:org.sonar.ant" default="jar">
   <property name="ivy.version" value="2.3.0"/>
-  <property name="ivy.url" value="http://172.31.86.246:8082/artifactory/example-repo-local/ivy-2.3.0.jar"/>
+  <property name="ivy.url" value="http://172.31.86.246:8082/artifactory/ivy-dev/ivy-2.3.0.jar"/>
   <property name="ivy.jar.dir" value="${basedir}/ivy"/>
   <property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar"/>
   <property name="build.dir" value="target"/>
