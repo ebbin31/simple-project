@@ -1,0 +1,80 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:sonar="antlib:org.sonar.ant" default="jar">
+  <property name="ivy.version" value="2.3.0"/>
+  <property name="ivy.url" value="http://172.16.112.5:8082/artifactory/example-repo-local/ivy-2.3.0.jar"/>
+  <property name="ivy.jar.dir" value="${basedir}/ivy"/>
+  <property name="ivy.jar.file" value="${ivy.jar.dir}/ivy.jar"/>
+  <property name="build.dir" value="target"/>
+  <property name="src.dir" value="src/main/java"/>
+
+<property name="sonar.host.url" value="http://172.16.112.5:9000" />
+        <!-- Define the Sonar properties -->
+	<property name="sonar.projectKey" value="org.sonarqube:devopsdemo" />
+	<property name="sonar.projectName" value="Devopsdemo" />
+	<property name="sonar.projectVersion" value="1.0" />
+	<property name="sonar.sources" value="." />
+	<property name="sonar.binaries" value="${build.dir}" />
+        <property name="sonar.java.binaries" value="${build.dir}/classes/*" />
+	<property name="sonar.sourceEncoding" value="UTF-8" />
+
+<target name="sonar">
+                      <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml">
+                              <!-- Update the following line, or put the "sonar-ant-task-*.jar" file in your "$HOME/.ant/lib" folder -->
+                              <classpath path="/opt/sonarqube/lib/sonarqube-ant-task-2.7.0.1612.jar" />
+                      </taskdef>
+     
+                      <!-- Execute SonarQube Scanner for Ant Analysis -->
+                      <sonar:sonar />
+        </target>
+
+  <target name="download-ivy" unless="skip.download">
+    <mkdir dir="${ivy.jar.dir}"/>
+    <echo message="installing ivy..."/>
+    <get src="${ivy.url}" dest="${ivy.jar.file}" usetimestamp="true"/>
+  </target>
+
+  <target name="install-ivy" depends="download-ivy" description="--> install ivy">
+    <path id="ivy.lib.path">
+      <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
+    </path>
+    <taskdef resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
+  </target>
+
+  <target name="init" depends="install-ivy">
+    <ivy:settings file="ivysettings.xml" />
+    <ivy:retrieve/>
+  </target>
+
+  <target name="compile" depends="init">
+    <echo message="compiling..."/>
+    <mkdir dir="${build.dir}/classes"/>
+    <javac srcdir="${src.dir}" destdir="${build.dir}/classes"/>
+  </target>
+
+  <target name="jar" depends="compile">
+    <jar destfile="${build.dir}/${ivy.module}.jar" basedir="${build.dir}/classes"/>
+  </target>
+
+  <target name="deploy" depends="jar">
+    <ivy:deliver deliverpattern="${build.dir}/ivy.xml" pubrevision="${ivy.revision}" status="release"/>
+    <ivy:makepom ivyfile="${build.dir}/ivy.xml" pomfile="${build.dir}/${ivy.module}.pom"/>
+    <ivy:resolve/>
+    <ivy:publish resolver="marshallssnapshots"
+                 pubrevision="${ivy.revision}"
+                 status="${publish.status}"
+                 overwrite="true" 
+                 publishivy="false" >
+      <artifacts pattern="${build.dir}/[artifact].[ext]" />
+    </ivy:publish>
+  </target>
+
+  <target name="clean" description="--> clean the project">
+    <delete includeemptydirs="true" quiet="true">
+      <fileset dir="${build.dir}"/>
+      <fileset dir="lib"/>
+    </delete>
+  </target>
+
+  <target name="clean-cache" depends="install-ivy" description="--> clean the ivy cache">
+    <ivy:cleancache/>
+  </target>
+</project>
