@@ -5,7 +5,8 @@
   <credentials host="172.31.86.246" realm="Artifactory Realm" username="admin" passwd="Punchiri212" />
   <resolvers>
     <chain name="main">
-      <ibiblio name="public" m2compatible="true" root="http://172.31.86.246:8081/artifactory/ivy-dev" />
+      <ibiblio name="public" m2compatible="true" root="http://172.31.86.246:8082/artifactory/ivy-dev" />
+      <ibiblio name="m2snapshots" m2compatible="true" root="http://172.31.86.246:8082/artifactory/m2-snapshots/" />
     </chain>
   </resolvers>
 </ivy-settings>
