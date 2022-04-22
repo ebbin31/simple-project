@@ -1,19 +1,11 @@
-<?xml version="1.0"?>
--<ivysettings>
-<settings defaultResolver="defaultresolver"/>
-<property value="http://172.31.86.246:8082/artifactory/maven-remote/" name="ibiblio-maven2-root"/>
-<property value="http://172.31.86.246:8082/artifactory/m2-snapshots/" name="m2-snapshots"/>
-<property value="http://172.31.86.246:8082/artifactory/m2-releases/" name="m2-releases"/>
-<credentials passwd="${jFrogPassword}" username="${jFrogUsername}" realm="Artifactory Realm" host="172.31.86.246"/>
--<resolvers>
--<chain name="defaultresolver">
-<ibiblio name="mavenroot" root="${ibiblio-maven2-root}" m2compatible="true"/>
-<ibiblio name="m2snapshots" root="${m2-snapshots}" m2compatible="true"/>
-<ibiblio name="m2releases" root="${m2-releases}" m2compatible="true"/>
--<url name="repository">
-<ivy pattern="${m2-snapshots}/[organisation]/[module]/[revision]/ivy-[revision].xml"/>
-<artifact pattern="${m2-snapshots}/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]"/>
-</url>
-</chain>
-</resolvers>
-</ivysettings>
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-settings>
+  <settings defaultResolver="main" />
+  <!--Authentication required for publishing (deployment). 'Artifactory Realm' is the realm used by Artifactory so don't change it.-->
+  <credentials host="172.31.86.246" realm="Artifactory Realm" username="${security.getCurrentUsername()}" passwd="${security.getEncryptedPassword()!"*** Insert encrypted password here ***"}" />
+  <resolvers>
+    <chain name="main">
+      <ibiblio name="public" m2compatible="true" root="http://172.31.86.246:8081/artifactory/ivy-dev" />
+    </chain>
+  </resolvers>
+</ivy-settings>
