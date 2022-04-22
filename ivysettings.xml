@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 -<ivysettings>
 <settings defaultResolver="defaultresolver"/>
-<property value="http://172.31.86.246:8082/artifactory/maven-remote/" name="ibiblio-maven2-remote"/>
+<property value="http://172.31.86.246:8082/artifactory/m2/" name="ibiblio-maven2-root"/>
 <property value="http://172.31.86.246:8082/artifactory/m2-snapshots/" name="m2-snapshots"/>
 <property value="http://172.31.86.246:8082/artifactory/m2-releases/" name="m2-releases"/>
 <credentials passwd="${jFrogPassword}" username="${jFrogUsername}" realm="Artifactory Realm" host="172.31.86.246"/>
