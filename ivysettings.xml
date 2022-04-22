@@ -1,17 +1,17 @@
 <ivysettings>
 <settings defaultResolver="defaultresolver" />
 <property name="ibiblio-maven2-root" value="http://172.31.86.246:8082/artifactory/maven-remote/" />
-<property name="marshalls-snapshots" value="http://172.31.86.246:8082/artifactory/m2-snapshots/" />
-<property name="marshalls-releases" value="http://172.31.86.246:8082/artifactory/m2-releases/" />
+<property name="libss-snapshots" value="http://172.31.86.246:8082/artifactory/libs-snapshots/" />
+<property name="libss-releases" value="http://172.31.86.246:8082/artifactory/libs-releases/" />
 <credentials host="172.31.86.246" realm="Artifactory Realm" username="admin" passwd="Punchiri212"/>
 <resolvers>
     <chain name="defaultresolver">
     <ibiblio name="mavenroot" m2compatible="true" root="${ibiblio-maven2-root}" />
-    <ibiblio name="marshalls-snapshots" m2compatible="true" root="${marshalls-snapshots}" />
-    <ibiblio name="marshalls-releases" m2compatible="true" root="${marshalls-releases}" />
+    <ibiblio name="libs-snapshots" m2compatible="true" root="${libs-snapshots}" />
+    <ibiblio name="libs-releases" m2compatible="true" root="${libs-releases}" />
         <url name="repository">
-           <ivy pattern="${marshalls-snapshots}/[organisation]/[module]/[revision]/ivy-[revision].xml" />
-           <artifact pattern="${marshalls-snapshots}/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]" />
+           <ivy pattern="${libs-snapshots}/[organisation]/[module]/[revision]/ivy-[revision].xml" />
+           <artifact pattern="${libs-snapshots}/[organisation]/[module]/[revision]/[artifact]-[revision].[ext]" />
         </url>   
     </chain>
 </resolvers>
