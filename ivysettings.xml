@@ -3,7 +3,7 @@
 <property name="ibiblio-maven2-root" value="http://172.31.86.246:8082/artifactory/m2/" />
 <property name="m2snapshots" value="http://172.31.86.246:8082/artifactory/m2-snapshots/" />
 <property name="m2releases" value="http://172.31.86.246:8082/artifactory/m2-releases/" />
-<credentials host="172.31.86.246" realm="Artifactory Realm" username="${jFrogUsername}" passwd="${jFrogPassword}"/>
+<credentials host="172.31.86.246" realm="Artifactory Realm" username="admin" passwd="Punchiri212"/>
 <resolvers>
     <chain name="defaultresolver">
     <ibiblio name="mavenroot" m2compatible="true" root="${m2}" />
