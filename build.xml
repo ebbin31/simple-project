@@ -44,7 +44,7 @@
                  pubrevision="${ivy.revision}"
                  status="${publish.status}"
                  overwrite="true" 
-                 publishivy="false" >
+                 publishivy="true" >
       <artifacts pattern="${build.dir}/[artifact].[ext]" />
     </ivy:publish>
   </target>
