@@ -1,5 +1,5 @@
 <ivysettings>
         <resolvers>
-          <ibiblio name="artifactory" m2compatible="true" root="http://172.31.86.246:8081/artifactory/ivy-dev"/>
+          <ibiblio name="artifactory" m2compatible="true" root="https://repo1.maven.org/maven2/org/apache/ivy/ivy/2.3.0/"/>
         </resolvers>
 </ivysettings>
