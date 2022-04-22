@@ -1,4 +1,4 @@
-<project xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:sonar="antlib:org.sonar.ant" default="jar">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" default="jar">
   <property name="ivy.version" value="2.3.0"/>
   <property name="ivy.url" value="http://172.31.86.246:8082/artifactory/m2-releases/ivy/ivy/2.3.0/"/>
   <property name="ivy.jar.dir" value="${basedir}/ivy"/>
