@@ -1,6 +1,6 @@
 <ivysettings>
 <settings defaultResolver="defaultresolver" />
-<property name="ibiblio-maven2-root" value="http://172.31.86.246:8082/artifactory/m2/" />
+<property name="ibiblio-maven2-root" value="http://172.31.86.246:8082/artifactory/maven-remote/" />
 <property name="marshalls-snapshots" value="http://172.31.86.246:8082/artifactory/m2-snapshots/" />
 <property name="marshalls-releases" value="http://172.31.86.246:8082/artifactory/m2-releases/" />
 <credentials host="172.31.86.246" realm="Artifactory Realm" username="admin" passwd="Punchiri212"/>
