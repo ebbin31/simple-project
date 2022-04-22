@@ -1,6 +1,6 @@
 <ivysettings>
 <settings defaultResolver="defaultresolver" />
-<property name="ibiblio-maven2-root" value="http://172.31.86.246:8082/artifactory/ant-snapshots-local/" />
+<property name="ibiblio-maven2-root" value="http://172.31.86.246:8082/artifactory/ivy-local/" />
 <property name="libs-snapshots" value="http://172.31.86.246:8082/artifactory/ivy-local/" />
 <property name="libs-releases" value="http://172.31.86.246:8082/artifactory/ivy-local/" />
 <credentials host="172.31.86.246" realm="Artifactory Realm" username="admin" passwd="Punchiri212"/>
