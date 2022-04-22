@@ -1,7 +1,30 @@
-<ivy-module version="2.0">
-  <info organisation="org.jfrog.examples" module="simple-project" revision="1.${Version}"/>
-  <publications>
-    <artifact type="pom" ext="pom" conf="default" />
-    <artifact type="jar" ext="jar" conf="default" />
-  </publications>
-  </ivy-module>
+<?xml version="1.0"?>
+-<ivy-module version="2.0">
+<info revision="1.${Version}" module="simple-project" organisation="org.jfrog.examples"/>
+-<publications>
+<artifact conf="default" ext="pom" type="pom"/>
+<artifact conf="default" ext="jar" type="jar"/>
+</publications>
+-<dependencies>
+<dependency rev="2.0.0" name="org.jbundle.util.jbackup" org="org.jbundle.util"/>
+<dependency rev="1.5.8" name="shoal-gms-api" org="org.shoal"/>
+<dependency rev="1.0.22" name="util-i18n" org="org.ow2.util"/>
+<dependency rev="1.9.19-beta5" name="grizzly-lzma" org="com.sun.grizzly"/>
+<dependency rev="2.9" name="sonar-squid" org="org.codehaus.sonar"/>
+<dependency rev="2.2.0.SP1" name="granite-openjpa" org="org.graniteds"/>
+<dependency rev="7.0.0" name="tomcat-util" org="org.apache.tomcat"/>
+<dependency rev="2.4.0" name="camel-http" org="org.apache.camel"/>
+<dependency rev="2.2.1" name="xwork-core" org="org.apache.struts.xwork"/>
+<dependency rev="6.1.16" name="jetty" org="org.mortbay.jetty"/>
+<dependency rev="10.1.2.1" name="derby" org="org.apache.derby"/>
+<dependency rev="3.0.4" name="facebook-java-api" org="com.google.code.facebookapi"/>
+<dependency rev="12.0" name="guava" org="com.google.guava"/>
+<dependency rev="12.0" name="guava-gwt" org="com.google.guava"/>
+<!--dependency org="biz.littlej.jreqs" name="jreqs-guava" rev="0.1.1"/-->
+<dependency rev="1.1" name="sisu-ehcache" org="org.sonatype.sisu"/>
+<dependency rev="1.2.0" name="sisu-xmlrpc-client" org="org.sonatype.sisu"/>
+<!--dependency org="com.googlecode" name="kiama_2.8.1" rev="1.0.2"/-->
+<dependency rev="0.0.6" name="jyield" org="com.googlecode"/>
+<dependency rev="1.0" name="commons-cli" org="commons-cli"/>
+</dependencies>
+</ivy-module>
