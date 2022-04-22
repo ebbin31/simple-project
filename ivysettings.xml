@@ -1,8 +1,8 @@
 <ivysettings>
 <settings defaultResolver="defaultresolver" />
 <property name="ibiblio-maven2-root" value="http://172.31.86.246:8082/artifactory/maven-remote/" />
-<property name="libss-snapshots" value="http://172.31.86.246:8082/artifactory/libs-snapshots/" />
-<property name="libss-releases" value="http://172.31.86.246:8082/artifactory/libs-releases/" />
+<property name="libs-snapshots" value="http://172.31.86.246:8082/artifactory/libs-snapshots/" />
+<property name="libs-releases" value="http://172.31.86.246:8082/artifactory/libs-releases/" />
 <credentials host="172.31.86.246" realm="Artifactory Realm" username="admin" passwd="Punchiri212"/>
 <resolvers>
     <chain name="defaultresolver">
