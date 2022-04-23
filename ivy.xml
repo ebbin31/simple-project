@@ -1,5 +1,5 @@
 <ivy-module version="2.0">
-  <info organisation="org.jfrog.examples" module="simple-project" revision="1.${Version}"/>
+  <info organisation="org.tjx" module="simple-project" revision="1.${Version}"/>
   <publications>
     <artifact type="pom" ext="pom" conf="default" />
     <artifact type="jar" ext="jar" conf="default" />
