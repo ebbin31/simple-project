@@ -1,7 +1,7 @@
 <ivysettings>
 <settings defaultResolver="defaultresolver" />
 <!--property name="m2-snapshots" value="http://172.31.86.246:8082/artifactory/m2-snapshots/" /-->
-<property name="tjx-group" value="http://172.31.86.246:8082/artifactory/tjx-group/m2-snapshots" />
+<property name="tjx-group" value="http://172.31.86.246:8082/artifactory/m2-snapshots" />
 <credentials host="172.31.86.246" realm="Artifactory Realm" username="admin" passwd="Punchiri212"/>
 <resolvers>
     <chain name="defaultresolver">
