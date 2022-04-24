@@ -2,7 +2,7 @@
 <settings defaultResolver="defaultresolver" />
 <!--property name="m2-snapshots" value="http://172.31.86.246:8082/artifactory/libs-release-local/" /-->
 <property name="tjx-group" value="http://172.31.86.246:8082/artifactory/libs-release-local/" />
-<credentials host="172.31.86.246" realm="Artifactory Realm" username="admin" passwd="Punchiri212"/>
+<credentials host="172.31.86.246" realm="Artifactory Realm" username="admin" passwd="Punchiri@212"/>
 <resolvers>
     <chain name="defaultresolver">
     <ibiblio name="tjx-group" m2compatible="true" root="${tjx-group}" />
